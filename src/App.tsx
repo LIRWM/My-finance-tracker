@@ -30,6 +30,23 @@ function App() {
     setType("income");
   };
 
+return (
+  <div style={{ padding: "20px", fontFamily: "Arial" }}>
+    <h1>Мой финансовый трекер</h1>
 
+    <form onSubmit={addTransaction} style={{ marginBottom: "20px" }}>
+
+    </form>
+    
+    <h2>Транзакции</h2>
+    <ul>
+      {transactions.map((t) => (
+        <li key={t.id}>
+          {t.description} - {t.amount} ₽ ({t.type === "income" ? "доход" : "расход"})
+        </li>
+      ))}
+    </ul>
+  </div>
+  );
 }
 export default App;
